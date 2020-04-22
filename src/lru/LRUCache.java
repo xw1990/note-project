@@ -86,4 +86,15 @@ public class LRUCache {
         this.removeNode(node);
         return node;
     }
+
+    @Override
+    public String toString() {
+        LNode tmp = head.next;
+        String str = "LRUCache{";
+        while (tmp.next != null){
+            str += tmp.key + "=" + tmp.value + ",";
+            tmp = tmp.next;
+        }
+        return str.substring(0,str.length() -1) + "}";
+    }
 }
